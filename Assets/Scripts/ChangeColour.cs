@@ -1,21 +1,19 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
-using UnityEngine.AI;
 
 
 namespace NodeCanvas.Tasks.Actions {
 
-	public class SetNavmeshPosition : ActionTask {
-		private GameObject targetPosObj;
-		private NavMeshAgent nmAgent;
+	public class ChangeColour : ActionTask {
+
+		public Material mat;
+		public Color col;
+		public bool randomCol;
 
 		//Use for initialization. This is called only once in the lifetime of the task.
 		//Return null if init was successfull. Return an error string otherwise
 		protected override string OnInit() {
-			targetPosObj = agent.transform.GetChild(0).gameObject;
-			targetPosObj.transform.SetParent(null);
-			nmAgent = agent.transform.GetComponent<NavMeshAgent>();
 			return null;
 		}
 
@@ -23,13 +21,18 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-			nmAgent.SetDestination(targetPosObj.transform.position);
-            EndAction(true);
-        }
+			mat.color = col;
+			if (randomCol)
+			{
+				mat.color = new Color(Random.Range(0.5f, 0.9f), Random.Range(0.5f, 0.9f), Random.Range(0.5f, 0.9f));
+			}
+			EndAction(true);
+		}
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-        }
+			
+		}
 
 		//Called when the task is disabled.
 		protected override void OnStop() {

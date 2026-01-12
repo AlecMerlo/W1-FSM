@@ -6,16 +6,14 @@ using UnityEngine.AI;
 
 namespace NodeCanvas.Tasks.Actions {
 
-	public class SetNavmeshPosition : ActionTask {
-		private GameObject targetPosObj;
-		private NavMeshAgent nmAgent;
+	public class GoToCameraPos : ActionTask {
+		public Transform playerTra;
+		public NavMeshAgent guardNav;
+		public ParticleSystem ps;
 
 		//Use for initialization. This is called only once in the lifetime of the task.
 		//Return null if init was successfull. Return an error string otherwise
 		protected override string OnInit() {
-			targetPosObj = agent.transform.GetChild(0).gameObject;
-			targetPosObj.transform.SetParent(null);
-			nmAgent = agent.transform.GetComponent<NavMeshAgent>();
 			return null;
 		}
 
@@ -23,18 +21,23 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-			nmAgent.SetDestination(targetPosObj.transform.position);
-            EndAction(true);
-        }
+			ps.gameObject.transform.position = playerTra.position - new Vector3(0,0.9f,0);
+            // used this link -https://docs.unity3d.com/2021.3/Documentation/ScriptReference/ParticleSystem-emission.html-
+            var psEmission = ps.emission;
+            psEmission.enabled = true;
+			guardNav.SetDestination(playerTra.position);
+			EndAction(true);
+		}
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-        }
+			
+		}
 
 		//Called when the task is disabled.
 		protected override void OnStop() {
-			
-		}
+           
+        }
 
 		//Called when the task is paused.
 		protected override void OnPause() {
