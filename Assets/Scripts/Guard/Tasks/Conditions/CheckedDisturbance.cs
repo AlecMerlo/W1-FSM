@@ -1,13 +1,16 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
 using UnityEngine;
+using UnityEngine.AI;
 
 
 namespace NodeCanvas.Tasks.Conditions {
 
-	public class CameraChangeTimer : ConditionTask {
-		public float waitTime;
-		private float timeWaited = 0f;
+    [Category("Custom/Guard")]
+
+    public class CheckedDisturbance : ConditionTask {
+		public NavMeshAgent nm;
+
 		//Use for initialization. This is called only once in the lifetime of the task.
 		//Return null if init was successfull. Return an error string otherwise
 		protected override string OnInit(){
@@ -16,7 +19,7 @@ namespace NodeCanvas.Tasks.Conditions {
 
 		//Called whenever the condition gets enabled.
 		protected override void OnEnable() {
-			timeWaited = 0;
+			
 		}
 
 		//Called whenever the condition gets disabled.
@@ -27,8 +30,7 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Called once per frame while the condition is active.
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
-			timeWaited += Time.deltaTime;
-			return timeWaited > waitTime;
+			return (!nm.hasPath);
 		}
 	}
 }

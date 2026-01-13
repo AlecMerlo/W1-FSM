@@ -6,7 +6,9 @@ using UnityEngine.AI;
 
 namespace NodeCanvas.Tasks.Actions {
 
-	public class ChasePlayer : ActionTask {
+    [Category("Custom/Guard")]
+
+    public class ChasePlayer : ActionTask {
         public Transform playerTra;
         public NavMeshAgent guardNav;
 
