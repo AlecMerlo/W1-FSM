@@ -7,10 +7,11 @@ namespace NodeCanvas.Tasks.Conditions {
 
 	public class ChoiceToFollowFriend : ConditionTask {
 		private float timer = 0;
+        public BBParameter<GameObject> otherFSM;
 
-		//Use for initialization. This is called only once in the lifetime of the task.
-		//Return null if init was successfull. Return an error string otherwise
-		protected override string OnInit(){
+        //Use for initialization. This is called only once in the lifetime of the task.
+        //Return null if init was successfull. Return an error string otherwise
+        protected override string OnInit(){
 			return null;
 		}
 
@@ -23,10 +24,10 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
 			timer += Time.deltaTime;
-
-			if (timer > 6)
+            Blackboard oFSM = otherFSM.value.GetComponent<Blackboard>();
+            if (timer > 6)
 			{
-				if(Random.Range(0, 100) <= 60)
+				if(Random.Range(0, 100) <= oFSM.GetVariableValue<float>("friendship"))
 				{
                     return true;
                 }

@@ -18,6 +18,7 @@ namespace NodeCanvas.Tasks.Actions
         public float turnSpeed = 180f;
         public float stoppingDistance = 0.1f;
         private float timer = 0;
+        public BBParameter<GameObject> otherFSM;
 
         private Blackboard agentBb;
 
@@ -47,6 +48,9 @@ namespace NodeCanvas.Tasks.Actions
                 agent.transform.position + moveSpeed * Time.deltaTime * agent.transform.forward,
                 Quaternion.RotateTowards(agent.transform.rotation, rot, turnSpeed * Time.deltaTime)
             );
+
+            Blackboard oFSM = otherFSM.value.GetComponent<Blackboard>();
+            oFSM.SetVariableValue("friendship", oFSM.GetVariableValue<float>("friendship") + Time.deltaTime);
 
             timer += Time.deltaTime;
             if (timer > 14)
