@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
+  m_Name: Play
+  m_EditorClassIdentifier: 
+  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"valueA":{"_name":"location","_targetVariableID":"303ab64d-5183-4c02-bc02-9b57170852be"},"valueB":{"_value":1},"$type":"NodeCanvas.Tasks.Actions.SetInt"},{"otherFSM":{"_name":"FSM1","_targetVariableID":"e9789e21-e116-4d22-9123-90b53e976518"},"loc":{"_name":"location","_targetVariableID":"303ab64d-5183-4c02-bc02-9b57170852be"},"$type":"NodeCanvas.Tasks.Actions.Sliding"},{"target":{"_name":"Slides","_targetVariableID":"d8641edc-0b6b-4f74-a756-9f9971e255c2"},"$type":"NodeCanvas.Tasks.Actions.MoveAndTurnTowards"},{"waitTime":{"_value":6.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Go
+    to Slides","_position":{"x":636.7463,"y":552.7261},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"target":{"_name":"FSM1","_targetVariableID":"e9789e21-e116-4d22-9123-90b53e976518"},"otherFSM":{"_name":"FSM1","_targetVariableID":"e9789e21-e116-4d22-9123-90b53e976518"},"$type":"NodeCanvas.Tasks.Actions.FollowFriend"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"FollowFriend","_position":{"x":933.9929,"y":405.1554},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"}],"connections":[{"_condition":{"otherFSM":{"_name":"FSM1","_targetVariableID":"e9789e21-e116-4d22-9123-90b53e976518"},"$type":"NodeCanvas.Tasks.Conditions.ChoiceToFollowFriend"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _objectReferences: []
+  _graphSource:
+    _version: 3.33
+    _category: 
+    _comments: 
+    _translation: {x: -285, y: 125}
+    _zoomFactor: 0.6777356
+  _haltSerialization: 0
+  _externalSerializationFile: {fileID: 0}

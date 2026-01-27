@@ -9,7 +9,7 @@ namespace NodeCanvas.Tasks.Actions {
     
 	public class MoveAndTurnTowards : ActionTask {
 
-        public Transform target;
+        public BBParameter<Transform> target;
         public float moveSpeed = 5f;
         [Tooltip("Measured in degrees per second")] 
 		public float turnSpeed = 180f;
@@ -35,7 +35,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 		protected override void OnUpdate()
 		{
-			Vector3 dir = target.position - agent.transform.position;
+			Vector3 dir = target.value.position - agent.transform.position;
 			Quaternion rot = Quaternion.LookRotation(dir);
 
 			agent.transform.SetPositionAndRotation(
@@ -43,7 +43,7 @@ namespace NodeCanvas.Tasks.Actions {
 				Quaternion.RotateTowards(agent.transform.rotation, rot, turnSpeed * Time.deltaTime)
 			);
 
-			if (Vector3.Distance(agent.transform.position, target.position) < stoppingDistance)
+			if (Vector3.Distance(agent.transform.position, target.value.position) < stoppingDistance)
 			{
 				EndAction(true);
 			}
