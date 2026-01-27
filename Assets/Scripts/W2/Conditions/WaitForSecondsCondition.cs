@@ -18,13 +18,6 @@ namespace NodeCanvas.Tasks.Conditions {
 			waitTime = 0.0f;
 		}
 
-		//Called whenever the condition gets disabled.
-		protected override void OnDisable() {
-			
-		}
-
-		//Called once per frame while the condition is active.
-		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
 			waitTime += Time.deltaTime;
 			return waitTime > 14.0f;

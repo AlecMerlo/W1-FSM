@@ -50,7 +50,7 @@ namespace NodeCanvas.Tasks.Actions
             );
 
             Blackboard oFSM = otherFSM.value.GetComponent<Blackboard>();
-            oFSM.SetVariableValue("friendship", oFSM.GetVariableValue<float>("friendship") + Time.deltaTime);
+            oFSM.SetVariableValue("friendship", oFSM.GetVariableValue<float>("friendship") + (Time.deltaTime * 0.75f));
 
             timer += Time.deltaTime;
             if (timer > 14)

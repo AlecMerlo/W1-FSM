@@ -341,8 +341,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parentBlackboard: {fileID: 0}
-  _serializedBlackboard: '{"_variables":{"moveSpeed":{"_value":5.0,"_name":"moveSpeed","_id":"ba89915b-2dd4-43ea-83ab-e4c628e4b05a","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
-    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"turnSpeed":{"_value":180.0,"_name":"turnSpeed","_id":"17fffad6-5da3-4697-91b8-de987a737762","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+  _serializedBlackboard: '{"_variables":{"moveSpeed":{"_value":6.0,"_name":"moveSpeed","_id":"ba89915b-2dd4-43ea-83ab-e4c628e4b05a","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+    mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"turnSpeed":{"_value":200.0,"_name":"turnSpeed","_id":"17fffad6-5da3-4697-91b8-de987a737762","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"stoppingDistance":{"_value":1.0,"_name":"stoppingDistance","_id":"a760c1e2-70b7-4d1f-a0a7-6a1290ceb4ec","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
     mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"},"FSM1":{"_value":1,"_name":"FSM1","_id":"e9789e21-e116-4d22-9123-90b53e976518","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"location":{"_name":"location","_id":"303ab64d-5183-4c02-bc02-9b57170852be","$type":"NodeCanvas.Framework.Variable`1[[System.Int32,
@@ -353,10 +353,10 @@ MonoBehaviour:
   - {fileID: 1131412343}
   - {fileID: 97082358}
   _serializedVariables:
-  - _json: '{"_value":5.0,"_name":"moveSpeed","_id":"ba89915b-2dd4-43ea-83ab-e4c628e4b05a","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+  - _json: '{"_value":6.0,"_name":"moveSpeed","_id":"ba89915b-2dd4-43ea-83ab-e4c628e4b05a","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
-  - _json: '{"_value":180.0,"_name":"turnSpeed","_id":"17fffad6-5da3-4697-91b8-de987a737762","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
+  - _json: '{"_value":200.0,"_name":"turnSpeed","_id":"17fffad6-5da3-4697-91b8-de987a737762","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"}'
     _references: []
   - _json: '{"_value":1.0,"_name":"stoppingDistance","_id":"a760c1e2-70b7-4d1f-a0a7-6a1290ceb4ec","$type":"NodeCanvas.Framework.Variable`1[[System.Single,
@@ -388,8 +388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"actions":[{"valueA":{"_name":"location","_targetVariableID":"303ab64d-5183-4c02-bc02-9b57170852be"},"valueB":{},"$type":"NodeCanvas.Tasks.Actions.SetInt"},{"target":{"_value":1},"$type":"NodeCanvas.Tasks.Actions.MoveAndTurnTowards"},{"waitTime":{"_value":6.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Go
-    Home","_position":{"x":145.9942,"y":532.7699},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_nestedFSM":{"_value":2},"_position":{"x":-32.91108,"y":661.7846},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"1"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"$type":"NodeCanvas.Tasks.Conditions.WaitForSecondsCondition"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"valueA":{"_name":"location","_targetVariableID":"303ab64d-5183-4c02-bc02-9b57170852be"},"valueB":{},"$type":"NodeCanvas.Tasks.Actions.SetInt"},{"target":{"_value":1},"$type":"NodeCanvas.Tasks.Actions.MoveAndTurnTowards"},{"otherFSM":{"_name":"FSM1","_targetVariableID":"e9789e21-e116-4d22-9123-90b53e976518"},"$type":"NodeCanvas.Tasks.Actions.AtHome"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Go
+    Home","_position":{"x":145.9942,"y":532.7699},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_nestedFSM":{"_value":2},"_position":{"x":-32.91108,"y":661.7846},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"1"},{"_position":{"x":-197.2971,"y":548.2416},"$type":"NodeCanvas.StateMachines.AnyState","$id":"2"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"$type":"NodeCanvas.Tasks.Conditions.WaitForSecondsCondition"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"otherFSM":{"_name":"FSM1","_targetVariableID":"e9789e21-e116-4d22-9123-90b53e976518"},"$type":"NodeCanvas.Tasks.Conditions.FriendshipZero"},"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 1879325029}
@@ -398,8 +398,8 @@ MonoBehaviour:
     _version: 3.33
     _category: 
     _comments: 
-    _translation: {x: 116.40278, y: -158.82884}
-    _zoomFactor: 1
+    _translation: {x: 199, y: -251}
+    _zoomFactor: 0.9551332
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0
@@ -910,21 +910,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"valueA":{"_name":"location","_targetVariableID":"a4ae676a-52ca-4ad5-a710-f58104469d1e"},"valueB":{"_value":1},"$type":"NodeCanvas.Tasks.Actions.SetInt"},{"target":{"_value":1},"$type":"NodeCanvas.Tasks.Actions.MoveAndTurnTowards"},{"waitTime":{"_value":6.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Go
-    to Slide","_position":{"x":288.4405,"y":219.8934},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"actions":[{"valueA":{"_name":"location","_targetVariableID":"a4ae676a-52ca-4ad5-a710-f58104469d1e"},"valueB":{"_value":2},"$type":"NodeCanvas.Tasks.Actions.SetInt"},{"target":{"_value":2},"$type":"NodeCanvas.Tasks.Actions.MoveAndTurnTowards"},{"waitTime":{"_value":6.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Go
-    to Swings","_position":{"x":462.0,"y":304.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"actions":[{"valueA":{"_name":"location","_targetVariableID":"a4ae676a-52ca-4ad5-a710-f58104469d1e"},"valueB":{"_value":3},"$type":"NodeCanvas.Tasks.Actions.SetInt"},{"target":{"_value":3},"$type":"NodeCanvas.Tasks.Actions.MoveAndTurnTowards"},{"waitTime":{"_value":6.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Go
-    to Structure","_position":{"x":610.6302,"y":110.1208},"$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_position":{"x":192.1777,"y":86.42725},"$type":"NodeCanvas.StateMachines.AnyState","$id":"3"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"valueA":{"_name":"location","_targetVariableID":"a4ae676a-52ca-4ad5-a710-f58104469d1e"},"valueB":{"_value":1},"$type":"NodeCanvas.Tasks.Actions.SetInt"},{"target":{"_value":1},"$type":"NodeCanvas.Tasks.Actions.MoveAndTurnTowards"},{"waitTime":{"_value":8.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Go
+    to Slide","_position":{"x":288.4405,"y":219.8934},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"actions":[{"valueA":{"_name":"location","_targetVariableID":"a4ae676a-52ca-4ad5-a710-f58104469d1e"},"valueB":{"_value":2},"$type":"NodeCanvas.Tasks.Actions.SetInt"},{"target":{"_value":2},"$type":"NodeCanvas.Tasks.Actions.MoveAndTurnTowards"},{"waitTime":{"_value":5.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Go
+    to Swings","_position":{"x":462.0,"y":304.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"actions":[{"valueA":{"_name":"location","_targetVariableID":"a4ae676a-52ca-4ad5-a710-f58104469d1e"},"valueB":{"_value":3},"$type":"NodeCanvas.Tasks.Actions.SetInt"},{"target":{"_value":3},"$type":"NodeCanvas.Tasks.Actions.MoveAndTurnTowards"},{"waitTime":{"_value":5.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Go
+    to Structure","_position":{"x":610.6302,"y":110.1208},"$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_position":{"x":35.59117,"y":83.65322},"$type":"NodeCanvas.StateMachines.AnyState","$id":"3"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"friendshipValue":{"_name":"friendship","_targetVariableID":"8451efa8-fce3-44bd-9546-7b91da7e8d0f"},"otherFSM":{"_value":4},"$type":"NodeCanvas.Tasks.Conditions.GoToFriendAtSlide"},"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 97082358}
   - {fileID: 964029539}
   - {fileID: 2031175354}
+  - {fileID: 421662607}
   _boundGraphSource:
     _version: 3.33
     _category: 
     _comments: 
-    _translation: {x: -245.93364, y: 228.22972}
-    _zoomFactor: 1
+    _translation: {x: 158.29906, y: 121.99009}
+    _zoomFactor: 0.75009304
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0
