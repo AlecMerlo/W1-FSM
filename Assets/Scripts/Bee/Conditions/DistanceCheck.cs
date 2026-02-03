@@ -1,22 +1,32 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
-using System.Numerics;
 using UnityEngine;
 
 
 namespace NodeCanvas.Tasks.Conditions {
 
 	public class DistanceCheck : ConditionTask {
-		Transform pos1, pos2;
+		public Transform pos1, pos2;
 		public int desiredDistance;
+		public float timeToWait = 0;
 		public bool lessThan;
+		private float timer;
 
-		//Called once per frame while the condition is active.
-		//Return whether the condition is success or failure.
-		//protected override bool OnCheck() {
-			//if(lessThan)
-			//return (Vector3.Distance() < desiredDistance);
-			//else return (Vector3.Distance() > desiredDistance);
-		//}
+        protected override void OnEnable()
+        {
+			timer = 0;
+        }
+		protected override bool OnCheck() {
+			if (timer > timeToWait)
+			{
+				if (lessThan) return (Vector3.Distance(pos1.position, pos2.position) < desiredDistance);
+				else return (Vector3.Distance(pos1.position, pos2.position) > desiredDistance);
+			}
+			else
+			{
+				timer += Time.deltaTime;
+			}
+			return false;
+		}
 	}
 }
