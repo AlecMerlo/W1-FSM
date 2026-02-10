@@ -8,8 +8,9 @@ namespace NodeCanvas.Tasks.Actions {
 	public class SetNavmeshPositionToFlowers : ActionTask {
 		public BBParameter<NavMeshAgent> nav;
 		public BBParameter<Transform> dest;
+        public BBParameter<Transform> flowerSearch;
 
-		protected override string OnInit() {
+        protected override string OnInit() {
 			return null;
 		}
 
@@ -17,7 +18,8 @@ namespace NodeCanvas.Tasks.Actions {
 			int randomFlowerLocation;
 
 			randomFlowerLocation = Random.Range(0, dest.value.childCount - 1);
-			nav.value.destination = dest.value.GetChild(randomFlowerLocation).position;
+			flowerSearch.value = dest.value.GetChild(randomFlowerLocation);
+            nav.value.destination = dest.value.GetChild(randomFlowerLocation).position;
             EndAction(true);
         }
 	}
