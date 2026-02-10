@@ -7330,16 +7330,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _parentBlackboard: {fileID: 0}
   _serializedBlackboard: '{"_variables":{"BeeNavMesh":{"_value":1,"_name":"BeeNavMesh","_id":"8979a043-ef5d-4775-88af-290106b6c828","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.AI.NavMeshAgent,
-    UnityEngine.AIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
+    UnityEngine.AIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"flowers":{"_value":2,"_name":"flowers","_id":"d6a37fd1-e458-4bac-8df7-2375c72c73f9","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"FlyOffset":{"_value":3,"_name":"FlyOffset","_id":"006cd0ae-f4b0-42a0-a482-d1a6f91bb804","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
   _objectReferences:
   - {fileID: 0}
   - {fileID: 1496034454}
+  - {fileID: 1054910518}
+  - {fileID: 781143728}
   _serializedVariables:
   - _json: '{"_value":1,"_name":"BeeNavMesh","_id":"8979a043-ef5d-4775-88af-290106b6c828","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.AI.NavMeshAgent,
       UnityEngine.AIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
     _references:
     - {fileID: 0}
     - {fileID: 1496034454}
+  - _json: '{"_value":1,"_name":"flowers","_id":"d6a37fd1-e458-4bac-8df7-2375c72c73f9","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.Transform,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 1054910518}
+  - _json: '{"_value":1,"_name":"FlyOffset","_id":"006cd0ae-f4b0-42a0-a482-d1a6f91bb804","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 781143728}
 --- !u!114 &1496034456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7353,17 +7367,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"nav":{"_value":1},"dest":2,"$type":"NodeCanvas.Tasks.Actions.SetNavmeshPositionTo"},{"parent":3,"$type":"NodeCanvas.Tasks.Actions.SetBeeHeight"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Rest","_position":{"x":61.0,"y":395.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"nav":{"_value":1},"dest":4,"$type":"NodeCanvas.Tasks.Actions.SetNavmeshPositionTo"},{"desiredHeight":15.0,"flyingAbout":true,"parent":3,"$type":"NodeCanvas.Tasks.Actions.SetBeeHeight"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Find
-    Flower","_position":{"x":235.3246,"y":665.229},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"desiredHeight":8.0,"parent":3,"$type":"NodeCanvas.Tasks.Actions.SetBeeHeight"},{"waitTime":{"_value":3.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Collect
-    Pollen","_position":{"x":-22.86788,"y":493.2262},"$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"nav":{"_value":1},"dest":5,"$type":"NodeCanvas.Tasks.Actions.SetNavmeshPositionTo"},{"waitTime":{"_value":6.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"parent":3,"$type":"NodeCanvas.Tasks.Actions.SetBeeHeight"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Go
-    to Rest on Player","_position":{"x":496.7206,"y":543.2405},"$type":"NodeCanvas.StateMachines.ActionState","$id":"3"},{"_actionList":{"executionMode":1,"actions":[{"nav":{"_value":1},"dest":6,"$type":"NodeCanvas.Tasks.Actions.SetNavmeshPositionTo"},{"setTo":0,"overrideAgent":{"_type":"UnityEngine.Transform","_value":7},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},{"desiredHeight":13.0,"flyingAbout":true,"parent":3,"$type":"NodeCanvas.Tasks.Actions.SetBeeHeight"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Guard","_position":{"x":284.8187,"y":309.5276},"$type":"NodeCanvas.StateMachines.ActionState","$id":"4"},{"_actionList":{"executionMode":1,"actions":[{"nav":{"_value":1},"dest":5,"$type":"NodeCanvas.Tasks.Actions.SetNavmeshPositionTo"},{"waitTime":{"_value":8.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"setTo":1,"overrideAgent":{"_type":"UnityEngine.Transform","_value":7},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},{"parent":3,"$type":"NodeCanvas.Tasks.Actions.SetBeeHeight"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Ya
-    Like Jazz?","_position":{"x":514.0922,"y":405.3425},"$type":"NodeCanvas.StateMachines.ActionState","$id":"5"}],"connections":[{"_condition":{"nav":{"_value":1},"timeToWaitAfter":3.0,"$type":"NodeCanvas.Tasks.Conditions.ReachedLocation"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"pos1":8,"pos2":2,"desiredDistance":35,"lessThan":true,"$type":"NodeCanvas.Tasks.Conditions.DistanceCheck"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"nav":{"_value":1},"$type":"NodeCanvas.Tasks.Conditions.ReachedLocation"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"pos1":9,"pos2":10,"desiredDistance":12,"timeToWait":8.0,"lessThan":true,"$type":"NodeCanvas.Tasks.Conditions.DistanceCheck"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"nav":{"_value":1},"timeToWaitAfter":6.0,"$type":"NodeCanvas.Tasks.Conditions.ReachedLocation"},"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"pos1":8,"pos2":2,"desiredDistance":25,"lessThan":true,"$type":"NodeCanvas.Tasks.Conditions.DistanceCheck"},"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"pos1":8,"pos2":2,"desiredDistance":35,"$type":"NodeCanvas.Tasks.Conditions.DistanceCheck"},"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"nav":{"_value":1},"dest":{"_value":2},"$type":"NodeCanvas.Tasks.Actions.SetNavmeshPositionTo"},{"parent":{"_name":"FlyOffset","_targetVariableID":"006cd0ae-f4b0-42a0-a482-d1a6f91bb804"},"$type":"NodeCanvas.Tasks.Actions.SetBeeHeight"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Rest","_position":{"x":57.47874,"y":398.5212},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_nestedFSM":{"_value":3},"_position":{"x":287.3532,"y":679.9802},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"desiredHeight":8.0,"parent":{"_name":"FlyOffset","_targetVariableID":"006cd0ae-f4b0-42a0-a482-d1a6f91bb804"},"$type":"NodeCanvas.Tasks.Actions.SetBeeHeight"},{"waitTime":{"_value":3.0},"$type":"NodeCanvas.Tasks.Actions.Wait"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Collect
+    Pollen","_position":{"x":-24.04164,"y":502.6162},"$type":"NodeCanvas.StateMachines.ActionState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"nav":{"_value":1},"dest":{"_value":4},"$type":"NodeCanvas.Tasks.Actions.SetNavmeshPositionTo"},{"waitTime":{"_value":6.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"parent":{"_name":"FlyOffset","_targetVariableID":"006cd0ae-f4b0-42a0-a482-d1a6f91bb804"},"$type":"NodeCanvas.Tasks.Actions.SetBeeHeight"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Go
+    to Rest on Player","_position":{"x":497.8943,"y":543.2405},"$type":"NodeCanvas.StateMachines.ActionState","$id":"3"},{"_actionList":{"executionMode":1,"actions":[{"nav":{"_value":1},"dest":{"_value":5},"$type":"NodeCanvas.Tasks.Actions.SetNavmeshPositionTo"},{"setTo":0,"overrideAgent":{"_type":"UnityEngine.Transform","_value":6},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},{"desiredHeight":13.0,"flyingAbout":true,"parent":{"_name":"FlyOffset","_targetVariableID":"006cd0ae-f4b0-42a0-a482-d1a6f91bb804"},"$type":"NodeCanvas.Tasks.Actions.SetBeeHeight"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Guard","_position":{"x":284.8187,"y":309.5276},"$type":"NodeCanvas.StateMachines.ActionState","$id":"4"},{"_actionList":{"executionMode":1,"actions":[{"nav":{"_value":1},"dest":{"_value":4},"$type":"NodeCanvas.Tasks.Actions.SetNavmeshPositionTo"},{"waitTime":{"_value":8.0},"$type":"NodeCanvas.Tasks.Actions.Wait"},{"setTo":1,"overrideAgent":{"_type":"UnityEngine.Transform","_value":6},"$type":"NodeCanvas.Tasks.Actions.SetObjectActive"},{"parent":{"_name":"FlyOffset","_targetVariableID":"006cd0ae-f4b0-42a0-a482-d1a6f91bb804"},"$type":"NodeCanvas.Tasks.Actions.SetBeeHeight"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Ya
+    Like Jazz?","_position":{"x":514.0922,"y":405.3425},"$type":"NodeCanvas.StateMachines.ActionState","$id":"5"}],"connections":[{"_condition":{"nav":{"_value":1},"timeToWaitAfter":3.0,"$type":"NodeCanvas.Tasks.Conditions.ReachedLocation"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"pos1":7,"pos2":2,"desiredDistance":35,"lessThan":true,"$type":"NodeCanvas.Tasks.Conditions.DistanceCheck"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"nav":{"_value":1},"$type":"NodeCanvas.Tasks.Conditions.ReachedLocation"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"pos1":8,"pos2":9,"desiredDistance":12,"timeToWait":8.0,"lessThan":true,"$type":"NodeCanvas.Tasks.Conditions.DistanceCheck"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"nav":{"_value":1},"timeToWaitAfter":6.0,"$type":"NodeCanvas.Tasks.Conditions.ReachedLocation"},"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"pos1":7,"pos2":2,"desiredDistance":25,"lessThan":true,"$type":"NodeCanvas.Tasks.Conditions.DistanceCheck"},"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"pos1":7,"pos2":2,"desiredDistance":35,"$type":"NodeCanvas.Tasks.Conditions.DistanceCheck"},"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 1496034454}
   - {fileID: 250884855}
-  - {fileID: 781143728}
-  - {fileID: 1252494077}
+  - {fileID: 11400000, guid: 7d0374c152cd40a4dbcffc72a6b08e06, type: 2}
   - {fileID: 610801808}
   - {fileID: 269547580}
   - {fileID: 1523711710}
@@ -7374,8 +7386,8 @@ MonoBehaviour:
     _version: 3.33
     _category: 
     _comments: 
-    _translation: {x: 41, y: -204}
-    _zoomFactor: 1
+    _translation: {x: 123, y: -178}
+    _zoomFactor: 0.85196877
   _firstActivation: 0
   _enableAction: 0
   _disableAction: 0

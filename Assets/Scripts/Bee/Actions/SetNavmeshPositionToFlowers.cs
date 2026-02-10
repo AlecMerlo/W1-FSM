@@ -3,10 +3,9 @@ using ParadoxNotion.Design;
 using UnityEngine;
 using UnityEngine.AI;
 
-
 namespace NodeCanvas.Tasks.Actions {
 
-	public class SetNavmeshPositionTo : ActionTask {
+	public class SetNavmeshPositionToFlowers : ActionTask {
 		public BBParameter<NavMeshAgent> nav;
 		public BBParameter<Transform> dest;
 
@@ -15,7 +14,10 @@ namespace NodeCanvas.Tasks.Actions {
 		}
 
 		protected override void OnExecute() {
-			nav.value.destination = dest.value.position;
+			int randomFlowerLocation;
+
+			randomFlowerLocation = Random.Range(0, dest.value.childCount - 1);
+			nav.value.destination = dest.value.GetChild(randomFlowerLocation).position;
             EndAction(true);
         }
 	}

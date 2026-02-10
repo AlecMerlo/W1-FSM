@@ -11,7 +11,7 @@ namespace NodeCanvas.Tasks.Actions {
 		private float desiredHeightOffset = 0;
 		private int offsetMult = 1;
 		public bool flyingAbout = false;
-		public GameObject parent;
+        public BBParameter<GameObject> parent;
 
         protected override void OnExecute()
         {
@@ -21,13 +21,13 @@ namespace NodeCanvas.Tasks.Actions {
 
 		protected override void OnUpdate() {
 
-			if (parent.transform.localPosition.y < (desiredHeight + desiredHeightOffset) - 0.1f)
+			if (parent.value.transform.localPosition.y < (desiredHeight + desiredHeightOffset) - 0.1f)
 			{
-                parent.transform.localPosition += Vector3.up * Time.deltaTime * 6;
+                parent.value.transform.localPosition += Vector3.up * Time.deltaTime * 6;
 			}
-			else if (parent.transform.localPosition.y > (desiredHeight + desiredHeightOffset) + 0.1f)
+			else if (parent.value.transform.localPosition.y > (desiredHeight + desiredHeightOffset) + 0.1f)
 			{
-                parent.transform.localPosition -= Vector3.up * Time.deltaTime * 6;
+                parent.value.transform.localPosition -= Vector3.up * Time.deltaTime * 6;
             }
 			else if (!flyingAbout)
 			{
