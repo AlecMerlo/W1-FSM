@@ -10,14 +10,16 @@ namespace NodeCanvas.Tasks.Actions {
 		public BBParameter<bool> foundFlower;
         
 		protected override void OnExecute() {
-			for (int i = 1; i < flowerSearch.value.childCount - 1; i++)
+
+			if (flowerSearch.value.GetComponentInChildren<PollenFlower>() != null)
 			{
-				if (flowerSearch.value.GetChild(i).GetComponent<PollenFlower>() != null)
-				{
-					foundFlower = true;
-				}
+				foundFlower.SetValue(true);
 			}
-			EndAction(true);
+			else
+			{
+				
+			}
+				EndAction(true);
 		}
 	}
 }
