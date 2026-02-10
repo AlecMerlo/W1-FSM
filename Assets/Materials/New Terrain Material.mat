@@ -44,7 +44,9 @@ Material:
     m_Floats:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
+    - _Metallic: 0
     - _Parallax: 0.02
+    - _Smoothness: 0
     m_Colors:
     - _BaseColor: {r: 0.06469653, g: 0.31132078, b: 0.039649345, a: 1}
     - _Color: {r: 0.064696506, g: 0.31132075, b: 0.039649345, a: 1}
